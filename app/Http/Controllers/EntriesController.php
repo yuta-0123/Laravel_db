@@ -13,4 +13,11 @@ class EntriesController extends Controller
 
         return view('entries.index',['entries'=>$entries]);
     }
+
+    public function view($id){
+        $entry = Entry::findOrFail($id);
+
+        return view('entries.view',['entry'=>$entry]);
+    }
+
 }
